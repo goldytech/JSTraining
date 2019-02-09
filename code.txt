@@ -111,3 +111,23 @@ let intervalId = setInterval(
       console.log('1 second passed'); 
     }, 1000);
 
+// Selecting DOM elements (index.html)
+ <p id="first" class="p1">First Paragraph</p>
+  <p name="name1" class="p1">Second Paragraph</p>
+  <p class="p3">Third Paragraph</p>
+
+// Selecting DOM elements (index.js)
+
+let element = document.getElementById('first');
+
+element.style.color = 'blue';
+
+console.log(element);
+
+// Promise
+let promise = new Promise(function (resolve, reject) {
+  setTimeout(resolve, 100, 'someValue');
+});
+promise.then(value => console.log('fulfilled: ' + value),
+  error => console.log('rejected: ' + error));
+
