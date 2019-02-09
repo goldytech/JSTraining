@@ -1,0 +1,64 @@
+// REST PARAMS
+// 1
+function sendCars(...allCarIds) {
+    allCarIds.forEach(id => console.log(id));
+}
+sendCars(100, 200, 555);
+//2
+function sendCars(day, ...allCarIds) {
+    allCarIds.forEach(id => console.log(id));
+}
+// 3 DESTRUCTRING ARRAYS
+let carIds = [1, 2, 5];
+let [car1, car2, car3] = carIds;
+console.log(car1, car2, car3);
+
+// 4 DESTRUCTRING ARRAYS with spread
+let carIds = [1, 2, 5]; 
+let car1, remainingCars;
+[car1, ...remainingCars] = carIds;
+console.log(car1, remainingCars); 
+
+//5 DESTRUCTRING objects
+let car = { id: 5000, style: 'convertible' }; let { id, style } = car;
+console.log(id, style); 
+
+// SPREAD SYNTAX
+function startCars(car1, car2, car3) { 
+    console.log(car1, car2, car3); }
+let carIds = [100, 300, 500]; 
+startCars(...carIds); 
+
+// IIFE 1
+let func = function () { 
+  console.log('in function'); 
+};
+
+// need to call function explictly
+func();
+
+// IIFE 2
+(function () { 
+  console.log('in IIFE function'); 
+})();
+
+// IIFE 3
+let app = (function() 
+{ 
+  let carId = 123; 
+  console.log('in function'); 
+  return { }; 
+})();
+
+console.log(app);
+
+// CLOSURE
+let app = (function () {
+  let carId = 123;
+  let getId = function () {
+    return carId;
+  };
+  return { getId: getId };
+})();
+console.log(app.getId());
+
