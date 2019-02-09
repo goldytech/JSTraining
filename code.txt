@@ -62,3 +62,52 @@ let app = (function () {
 })();
 console.log(app.getId());
 
+// ARROW FUNCS 1
+let getId = () => 123;
+console.log( getId() ); // 123
+
+// ARROW FUNCS 2
+let getId = prefix => prefix + 123;
+console.log( getId('ID: ') ); // ID: 123
+
+// ARROW FUNCS 3
+
+let getId = (prefix, suffix) => prefix + 123 + suffix;
+console.log( getId('ID: ', '!') ); // ID: 123!
+
+// CLASS 
+class Car {
+  constructor(id) {
+    this.id = id;
+  }
+}
+let car = new Car(123); 
+console.log(car.id); 
+
+// Modules (car.js)
+export class Car { 
+    constructor(id) { 
+        this.id = id; 
+    } 
+    identify() { 
+        return `Car Id: ${this.id}`; 
+    } 
+}
+
+// Modules (index.js)
+import { Car } from './car';
+let car = new Car(123);
+console.log(car.identify());
+
+// Timers 1
+let timeoutId = setTimeout( function() { 
+  console.log('1 second passed'); 
+}, 1000);
+
+// Timers 2
+
+let intervalId = setInterval(
+   function() {
+      console.log('1 second passed'); 
+    }, 1000);
+
