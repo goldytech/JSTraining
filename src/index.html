@@ -7,7 +7,27 @@
 <body>
 
   <h1>JavaScript Fundamentals</h1>
-  
+  <form action="/somepath" method="post" id="exam-form">
+    <label for="user">Id</label>
+    <input name="Id" placeholder="Id"/>
+    <span id="id-error"></span>
+    <br>
+    <label for="studentName">Name</label>
+    <input name="studentName" placeholder="Name"/>
+    <span id="student-name-error"></span>
+    <br>
+    <label for="mathsMarks">Maths Marks</label>
+    <input name="mathsMarks" placeholder="Maths" type="number" min="1" max="50"/>
+    <span id="maths-marks-error"></span>
+    <br>
+    <label for="scienceMarks">Science Marks</label>
+    <input name="scienceMarks" placeholder="Science Marks" type="number" min="1" max="50"/>
+    <span id="science-marks-error"></span>
+    
+    <br>
+    <button name="btnContinue" type="button">Continue</button>
+    <button type="submit">Submit</button>
+  </form>
   </body>
   </html>
 
